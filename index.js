@@ -1,11 +1,15 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
+const dotenv = require('dotenv');
+const cors = require('cors');
+
+dotenv.config();
 
 const app = express();
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
-
+app.use(cors());
 app.use(express.static(__dirname + '/frontend/dist'));
 
 const aws = {
@@ -43,11 +47,13 @@ app.get('*', function (req, res) {
     
 });
 
-app.listen(3000, err => {
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, err => {
   if (err) {
     console.log(err);
   } else {
-    console.log('Listening on PORT', 3000);
+    console.log(`Listening on PORT ${PORT}`);
   }
 });
 
