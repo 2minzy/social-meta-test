@@ -27,7 +27,7 @@ const aws = {
 let OG_TITLE = 'SDC2021 TEST TITLE #sdc';
 let OG_DESCRIPTION = 'SDC2021 TEST DESC';
 let OG_TYPE = 'website';
-let OG_URL = 'https://www.samsung.com/sec/';
+let OG_URL = 'https://www.samsung.com/';
 
 app.get('*', function (req, res) {
   const metaImage = aws.getImageUrl({id: req.query.id})
