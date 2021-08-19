@@ -14,12 +14,14 @@ app.use(express.static(__dirname + '/frontend/dist'));
 
 const aws = {
   getImageUrl({id}) {
-    console.log(id)
     if (id == 'logo') {
       return 'https://dfy-test.s3.ap-northeast-2.amazonaws.com/images/dev/works/2102a479-0f6b-4624-883a-bbaba1cce685/1627364848176.jpg'
     }
     if (id == 'slogan') {
       return 'https://d3pa3k2t5qmtom.cloudfront.net/images/dev/dfy-slogan-logo.png';
+    }
+    if (id == 'bread') {
+      return 'https://d3pa3k2t5qmtom.cloudfront.net/images/dev/works/4b52b7c2-836d-498b-b3a6-e76409f6c848/1629268778632.jpeg'
     }
   }
 }
